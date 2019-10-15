@@ -1,0 +1,21 @@
+function [sum,diff,fracDiff] = linear_noise_reduced_image_compare(image1,image2)
+% Returns sum, difference, and fractional difference of the integral of two images
+% Reduces noise by finding average of the first 10 rows of the image, and
+% subtracting that value throughout every pixel value, and setting negative
+% values to 0
+%   
+
+    1TopAvg = uint16((sum(image1array(1:4600))/4600)); % Change the 4600 to be ten rows of any dimensioned image
+    1NoiseAdjustedImage = 1ImageArray - 1TopAvg;
+    1NoiseAdjustedImage(sNoiseAdjustedImage<0)=0;
+    1Sum = sum(sum((sNoiseAdjustedImage)));
+    
+    pTopAvg = uint16((sum(pImageArray(1:4600))/4600));
+    pNoiseAdjustedImage = pImageArray - pTopAvg;
+    pNoiseAdjustedImage(pNoiseAdjustedImage<0)=0;
+    pSum = sum(sum((pNoiseAdjustedImage)));
+    
+    sum = pSum + sSum
+    diff = 
+end
+
